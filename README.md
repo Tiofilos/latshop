@@ -1,3 +1,0 @@
-# latshop
-# latshop
-# latshop
