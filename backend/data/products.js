@@ -1,7 +1,6 @@
 
 const products = [
     {
-        _id: '1',
         name: 'Airpods Pro',
         image: '/images/airpods.jpeg',
         description: 'Earphones for music',
@@ -13,7 +12,6 @@ const products = [
         numReviews: 3,
     },
     {
-        _id: '2',
         name: 'Apple Airtag',
         image: '/images/airtag.jpeg',
         description: 'To track',
@@ -25,7 +23,6 @@ const products = [
         numReviews: 4,
     },
     {
-        _id: '3',
         name: 'Macbook Pro',
         image: '/images/macbook.jpeg',
         description: 'Personal computer',
@@ -37,7 +34,6 @@ const products = [
         numReviews: 2,
     },
     {
-        _id: '4',
         name: 'iPhone 14 Pro Max',
         image: '/images/iphone14.jpeg',
         description: 'Best mobile phone',
@@ -50,4 +46,4 @@ const products = [
     },
     ]
     
-    module.exports = products
+    export default products
