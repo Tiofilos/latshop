@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useParams, useNavigate, Link , useLocation } from 'react-router-dom'
 import { Row, Col, ListGroup, Image, Form, Button, Card, ListGroupItem, FormControl} from 'react-bootstrap'
 import Message from '../components/Message'
-import { addToCart } from '../actions/cartActions'
+import { addToCart, removeFromCart } from '../actions/cartActions'
 
 const CartScreen = ()=> {
   const params = useParams();
@@ -29,10 +29,10 @@ const CartScreen = ()=> {
     }, [dispatch, productId, qty])
 
     const removeFromCartHandler = (id) => {
-            console.log()
+            dispatch(removeFromCart(id))
     }
     const checkoutHandler = (id) => {
-        console.log()
+        navigate.push('/login?redirect=shipping')
 }
 
     return <Row>
