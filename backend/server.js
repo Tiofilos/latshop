@@ -15,19 +15,31 @@ const app = express()
 
 app.use(express.json())
 
-app.get('/', (req,res) => {
-    res.send('API is working fine...')
-})
+
 
 app.use('/api/products', productRoutes)
 app.use('/api/users', userRoutes)
 app.use('/api/orders', orderRoutes)
 app.use('/api/upload', uploadRoutes)
 
-
 const __dirname = path.resolve()
 app.use('/uploads', express.static(path.join(__dirname, '/uploads')))
 
-const PORT = process.env.PORT || 3001
+
+//hosting the app
+
+if(process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '/frontend/build')))
+
+    app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html')))
+} else {
+    app.get('/', (req,res) => {
+        res.send('API is working fine...')
+    })
+}
+
+
+
+const PORT = process.env.PORT || 3008
 
 app.listen(PORT, console.log(`server running in ${process.env.NODE_ENV} mode on port ${PORT}`))
