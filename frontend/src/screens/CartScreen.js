@@ -7,7 +7,7 @@ import { addToCart, removeFromCart } from '../actions/cartActions'
 
 const CartScreen = ()=> {
   const params = useParams();
-  const navigate = useNavigate();
+  const Navigate = useNavigate();
   const location = useLocation ();
 
 
@@ -32,8 +32,8 @@ const CartScreen = ()=> {
             dispatch(removeFromCart(id))
     }
     const checkoutHandler = (id) => {
-        navigate.push('/login?redirect=shipping')
-}
+        Navigate('/login?redirect=/shipping')
+    }
 
     return <Row>
         <Col md={8}>

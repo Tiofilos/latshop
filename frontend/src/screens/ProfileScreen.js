@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {useLocation, useNavigate} from 'react-router-dom'
+import { useNavigate} from 'react-router-dom'
 import { Form, Button, Row, Col, FormGroup, FormLabel, FormControl } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
@@ -8,13 +8,12 @@ import { getUserDetails, updateUserProfile} from '../actions/userActions'
 
 
 
-const ProfileScreen = ({}) => {
+const ProfileScreen = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [message, setMessage] = useState(null);
-    const location = useLocation ();
     const navigate = useNavigate ();
     const dispatch = useDispatch()
 
